@@ -8,125 +8,160 @@ ul{
     list-style: inside;
 }
 /* Navigation bar   */
-  * {
-    box-sizing: border-box;
-    margin: 0;
-  }
-  body {
-    font-family: Helvetica;
-    max-width: 1440px;
-    margin: auto;
-  }
-  ul {
-    padding: unset;
-    font-size:16px;
-  }
-  a {
-    text-decoration: none;
-    color:#242424;
-    font-size: 14px;
-  }
-  a:hover {
-
-    color:#E23640;
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
-  .link {
-    position: relative;
-  }
-  .styled-btn {
-    border: 1px solid #1D1A1A;
-    padding:0.5rem 1.6rem;
-    border-radius: 23px;
-    font-size: 14px;
-    transition: background-color 200ms ease-in-out;
-    background-color:#ffffff;
-    color:#242424;
-  }
-  .styled-btn:hover {
-    background-color:#E23640;
-    color:#ffffff;
-    border: #E23640;
-  }
-  button {
-    cursor: pointer;
-  }
-  
-/* Pricing Card Animation  Effect */
- .hover-effect {
-  transition: box-shadow 200ms ease-in-out;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+body {
+  font-family: Helvetica;
+  max-width: 1440px;
+  margin: auto;
 }
-
-.hover-effect:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.5);
-} 
-/* Pricing Card Animation  Effect */
+ul {
+  padding: unset;
+  font-size: 16px;
+}
+a {
+  text-decoration: none;
+  color: #242424;
+  font-size: 14px;
+}
+a:hover {
+  color: #E23640;
+}
+.link {
+  position: relative;
+}
+.styled-btn {
+  border: 1px solid #1D1A1A;
+  padding: 0.5rem 1.6rem;
+  border-radius: 23px;
+  font-size: 14px;
+  transition: background-color 200ms ease-in-out;
+  background-color: #ffffff;
+  color: #242424;
+}
+#check {
+  display: none;
+}
+.styled-btn:hover {
+  background-color: #E23640;
+  color: #ffffff;
+  border: #E23640;
+}
+button {
+  cursor: pointer;
+}
 
 nav {
-    display: grid;
-    grid-template-areas: "f logo l";
-    position: relative;
-    background-color:#ffffff;
-    justify-content: space-evenly;
-    padding: calc(16px * 1.5);
-  }
-  nav ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: calc(16px * 3);
-    color:#242424;
-  }
+  display: grid;
+  grid-template-areas: "f logo l";
+  position: relative;
+  background-color: #ffffff;
+  justify-content: space-evenly;
+  padding: calc(16px * 1.5);
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: calc(16px * 3);
+  color: #242424;
+}
 
-  nav .logo {
-    grid-area: logo;
-    color:#1D1A1A;
-    font-family: "Racing Sans One";
-    font-size:62px;
+nav .logo {
+  grid-area: logo;
+  color: #1D1A1A;
+  font-family: "Racing Sans One";
+  font-size: 62px;
+}
+nav .logo:hover {
+  color: #E23640;
+}
+nav .first-links {
+  grid-area: f;
+}
+nav .last-links {
+  grid-area: l;
+}
+nav .hamburger,
+nav .close {
+  grid-area: h;
+  width: calc(16px * 2);
+  display: none;
+  cursor: pointer;
+}
+
+/* Media queries for nav bar */
+@media all and (max-width: 992px) {
+  nav {
+    grid-template-areas:
+      "logo h"
+      "f f"
+      "l l";
+    justify-content: space-between;
+    align-items: center;
   }
-  nav .logo:hover{
-    color: #E23640;
+  nav .first-links,
+  nav .last-links {
+    display: none; 
+    flex-direction: column;
+    gap: calc(16px * 2);
+    padding: calc(16px * 1) 0;
+  }
+  nav .logo {
+    font-size: 40px;
   }
   nav .first-links {
-    grid-area: f;
+    margin-top: 10px; 
+    margin-bottom: -30px; 
+    text-align: center;
+    justify-content: space-between;
   }
   nav .last-links {
-    grid-area: l;
+    margin-top: 10px; 
+    margin-bottom: -25px; 
+    text-align: center;
   }
-  nav .hamburger,
-  nav .close {
-    grid-area: h;
-    width: calc(16px * 2);
+  ul.first-links li:nth-child(1) {
+    margin-bottom: -20px;
+  }
+  ul.first-links li:nth-child(2) {
+    margin-bottom: -20px;
+  }
+  ul.last-links li:nth-child(1) {
+    margin-bottom: -30px;
+ 
+  }
+  ul.last-links li:nth-child(2) {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  nav .hamburger {
+    display: block;
+  }
+
+  #checked {
+    display: block;
+  }
+  #no-checked {
     display: none;
-    cursor: pointer;
   }
-  /* Media queries for nav bar  */
-  @media all and (max-width: 992px) {
-    nav {
-      grid-template-areas:
-        "logo h"
-        "f f"
-        "l l";
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav .first-links,
-    nav .last-links {
-      display: flex;
-      flex-direction: column;
-      gap: calc(16px * 2);
-      padding: calc(16px * 1) 0;
-    }
-    nav .hidden {
-      display: none;
-    }
-    nav .show {
-      display: flex;
-    }
-    nav .logo {
-        font-size:40px;
-      }
+
+  #check:checked ~ .check-btn #checked {
+    display: none;
   }
+  #check:checked ~ .check-btn #no-checked {
+    display: block;
+  }
+  #check:checked ~ .first-links,
+  #check:checked ~ .last-links {
+    display: flex;
+  }
+}
+
+  
   
 /* End Style the navigation */
 
@@ -379,6 +414,17 @@ nav {
     line-height: 20px;
     padding-left: 16px;
   }
+    
+/* Pricing Card Animation  Effect */
+ .hover-effect {
+  transition: box-shadow 200ms ease-in-out;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+}
+
+.hover-effect:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.5);
+} 
+/* Pricing Card Animation  Effect */
   
   /* Media queries for Pricing section */
   @media all and (max-width: 992px) {
