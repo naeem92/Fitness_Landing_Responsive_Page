@@ -88,7 +88,7 @@
 ### color:#242424; 60%
 ### color:#E23640;
 ### color:#ffffff 
-###color:#ffffff 70%
+### color:#ffffff 70%
 
 # Radius
 
@@ -96,7 +96,7 @@
 ### border-radius: 5px;
 ### border-radius: 23px;
 
-# Font-Familys
+# Font-Family
 
 ### font-family: Helvetica;
 ### font-family: Racing Sans One;
